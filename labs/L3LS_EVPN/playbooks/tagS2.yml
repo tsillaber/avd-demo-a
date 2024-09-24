@@ -5,7 +5,7 @@
   vars:
     CVP_TAGS:
       #dc2P1
-      - device: s1-spine1
+      - device: s2-spine1
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -21,7 +21,7 @@
             value: Spine
           - name: NodeID
             value: 1
-      - device: s1-spine2
+      - device: s2-spine2
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -37,7 +37,7 @@
             value: Spine
           - name: NodeID
             value: 2
-      - device: s1-leaf1
+      - device: s2-leaf1
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -57,7 +57,7 @@
             value: 10
           - name: MLAG_Side
             value: A
-      - device: s1-leaf2
+      - device: s2-leaf2
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -77,7 +77,7 @@
             value: 11
           - name: MLAG_Side
             value: B
-      - device: s1-leaf3
+      - device: s2-leaf3
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -97,7 +97,7 @@
             value: 12
           - name: MLAG_Side
             value: A
-      - device: s1-leaf4
+      - device: s2-leaf4
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -117,7 +117,7 @@
             value: 13
           - name: MLAG_Side
             value: B
-      - device: s1-brdr1
+      - device: s2-brdr1
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -135,7 +135,7 @@
             value: 14
           - name: MLAG_Side
             value: A
-      - device: s1-brdr2
+      - device: s2-brdr2
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -154,7 +154,7 @@
           - name: MLAG_Side
             value: B
 #Hosts and other stuff
-      - device: s1-host1
+      - device: s2-host1
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
@@ -164,7 +164,7 @@
             value: dc2_pod1
           - name: topology_hint_rack
             value: dc2_RACK1
-      - device: s1-host2
+      - device: s2-host2
         device_tags:
           - name: topology_hint_datacenter
             value: dc2
