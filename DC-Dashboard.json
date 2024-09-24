@@ -3,18 +3,18 @@
     {
       "key": "881a3bc9-00c5-471c-bffa-70ab69c1049d",
       "createdAt": [
-        258856734,
-        1561
+        590203625,
+        1608
       ],
-      "createdBy": "ts",
+      "createdBy": "arista",
       "metaData": {
         "schemaVersion": "3",
         "legacyKey": "",
         "legacyVersion": "",
         "fromPackage": ""
       },
-      "name": "Fabric Status (DC1)",
-      "description": "",
+      "name": "BMW Fabric Status",
+      "description": "Summarizes key values to know the status",
       "widgets": [
         {
           "id": "dd32db83-f004-4db1-8f10-fd6c332d7537",
@@ -35,8 +35,10 @@
               "BGP_ESTABLISHED_PEER_COUNT_DEFAULT_VRF"
             ],
             "metricSource": "devices",
-            "selectedCustomTags": [],
-            "tags": "bgp:enabled topology_datacenter:SIT_MIG ",
+            "selectedCustomTags": [
+              "dc_selector"
+            ],
+            "tags": "Role:Spine OR Role:Leaf ",
             "viewType": "metric"
           },
           "location": "main",
@@ -51,7 +53,7 @@
           },
           "dimensions": {
             "width": 11,
-            "height": 6
+            "height": 9
           },
           "type": "metrics-widget",
           "inputs": {
@@ -61,8 +63,10 @@
               "LAG_MLAG_STATUS"
             ],
             "metricSource": "devices",
-            "selectedCustomTags": [],
-            "tags": "topology_type:leaf  AND  topology_datacenter:SIT_MIG ",
+            "selectedCustomTags": [
+              "dc_selector"
+            ],
+            "tags": "Role:Leaf ",
             "viewType": "metric"
           },
           "location": "main",
@@ -84,16 +88,25 @@
             "displayMode": "logical",
             "displayModeDefault": "logical",
             "overlay": "inOctetsRate",
-            "selectedCustomTags": [],
+            "selectedCustomTags": [
+              "dc_selector"
+            ],
             "showActiveEvents": false,
             "showContainerTypes": false,
             "showLegend": true,
             "showManagement": false,
+            "showOverlaySelect": true,
             "showVxlanTunnels": false,
-            "tags": "topology_datacenter:SIT_MIG ",
+            "tags": "",
             "useDeviceImages": false
           },
           "location": "main",
+          "styles": {
+            "hideTitle": false,
+            "backgroundColor": "",
+            "hideHorizontalBar": false,
+            "titleSize": 14
+          },
           "parent": ""
         },
         {
@@ -101,7 +114,7 @@
           "name": "",
           "position": {
             "x": 11,
-            "y": 26
+            "y": 14
           },
           "dimensions": {
             "width": 13,
@@ -109,9 +122,10 @@
           },
           "type": "events-widget",
           "inputs": {
-            "eventCountThreshold": 1,
             "eventTypeFilter": [],
-            "selectedCustomTags": [],
+            "selectedCustomTags": [
+              "dc_selector"
+            ],
             "severityFilter": [
               "CRITICAL",
               "ERROR",
@@ -120,8 +134,10 @@
             ],
             "showAcked": false,
             "showActiveOnly": false,
-            "tags": "topology_datacenter:SIT_MIG ",
-            "viewMode": "Events Table"
+            "tags": "",
+            "viewMode": "Events Table",
+            "deviceHealthTag": "",
+            "deviceHealthGroupByTag": false
           },
           "location": "main",
           "parent": ""
@@ -131,11 +147,11 @@
           "name": "",
           "position": {
             "x": 0,
-            "y": 27
+            "y": 18
           },
           "dimensions": {
             "width": 11,
-            "height": 5
+            "height": 7
           },
           "type": "metrics-widget",
           "inputs": {
@@ -145,8 +161,10 @@
               "MAC_TABLE_SIZE"
             ],
             "metricSource": "devices",
-            "selectedCustomTags": [],
-            "tags": "topology_type:leaf AND topology_datacenter:SIT_MIG ",
+            "selectedCustomTags": [
+              "dc_selector"
+            ],
+            "tags": "Role:Leaf ",
             "viewType": "metric"
           },
           "location": "main",
@@ -157,7 +175,7 @@
           "name": "",
           "position": {
             "x": 0,
-            "y": 32
+            "y": 25
           },
           "dimensions": {
             "width": 11,
@@ -171,68 +189,41 @@
               "V4_TOTAL_ROUTES_TABLE_SIZE"
             ],
             "metricSource": "devices",
-            "selectedCustomTags": [],
-            "tags": "(topology_type:spine OR topology_type:leaf  ) AND topology_datacenter:SIT_MIG ",
+            "selectedCustomTags": [
+              "dc_selector"
+            ],
+            "tags": "Role:Spine OR Role:Leaf ",
             "viewType": "metric"
           },
           "location": "main",
           "parent": ""
         },
         {
-          "id": "9fd7c8b7-92a4-4fce-93c4-8cafb497f589",
+          "id": "8f000311-95fb-40aa-97e8-b9e587593e8f",
           "name": "",
           "position": {
             "x": 0,
-            "y": 15
+            "y": 0
           },
           "dimensions": {
-            "width": 11,
-            "height": 12
+            "width": 8,
+            "height": 2
           },
-          "type": "metrics-widget",
+          "type": "input-widget",
           "inputs": {
-            "components": [],
-            "isTokenSearchEnabled": true,
-            "metricKeys": [
-              "INTERFACE_OUT_BITRATE"
-            ],
-            "metricSource": "interfaces",
+            "defaultValue": "dc1",
+            "inputName": "dc_selector",
+            "inputSource": "devices",
             "selectedCustomTags": [],
-            "tags": "POC:mon ",
-            "viewType": "metric"
+            "tagLabel": "DC",
+            "tags": ""
           },
-          "location": "main",
-          "parent": ""
-        },
-        {
-          "id": "40cc2a38-47c5-46d7-8bf2-c25f1212401a",
-          "name": "",
-          "position": {
-            "x": 11,
-            "y": 14
-          },
-          "dimensions": {
-            "width": 13,
-            "height": 12
-          },
-          "type": "metrics-widget",
-          "inputs": {
-            "components": [],
-            "isTokenSearchEnabled": true,
-            "metricKeys": [
-              "INTERFACE_IN_BITRATE"
-            ],
-            "metricSource": "interfaces",
-            "selectedCustomTags": [],
-            "tags": "POC:mon ",
-            "viewType": "metric"
-          },
-          "location": "main",
+          "location": "inputs",
           "parent": ""
         }
       ],
-      "lastUpdated": 1724327097689,
-      "lastUpdatedBy": "ts"
+      "lastUpdated": 1727169014693,
+      "lastUpdatedBy": "arista"
     }
   ]
 }
