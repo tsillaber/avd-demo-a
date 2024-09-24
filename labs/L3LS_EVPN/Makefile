@@ -21,6 +21,7 @@ deploy-site-1: ## Deploy Configs via eAPI
 .PHONY: cvp-site-1
 cvp-site-1: ## Deploy Configs via CVP
 	ansible-playbook playbooks/cvp1.yml -i sites/site_1/inventory.yml
+	ansible-playbook playbooks/tagS1.yml
 
 ########################################################
 # Site 2
