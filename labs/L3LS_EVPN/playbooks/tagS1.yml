@@ -1,0 +1,175 @@
+- name: Add topology tags
+  hosts: cvp
+  connection: local
+  gather_facts: no
+  vars:
+    CVP_TAGS:
+      #DC1P1
+      - device: s1-spine1
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: spine
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 1
+      - device: s1-spine2
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: spine
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 2
+      - device: s1-leaf1
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: leaf
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 10
+          - name: MLAG_Side
+            value: A
+      - device: s1-leaf2
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: leaf
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 11
+          - name: MLAG_Side
+            value: B
+      - device: s1-leaf3
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: leaf
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 12
+          - name: MLAG_Side
+            value: A
+      - device: s1-leaf4
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: leaf
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 13
+          - name: MLAG_Side
+            value: B
+      - device: s1-brdr1
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: leaf
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 14
+          - name: MLAG_Side
+            value: A
+      - device: s1-brdr2
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: leaf
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: DC
+            value: dc1
+          - name: DC-Pod
+            value: 1
+          - name: Role
+            value: Leaf
+          - name: NodeID
+            value: 14
+          - name: MLAG_Side
+            value: B
+#Hosts and other stuff
+      - device: s1-host1
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: endpoint
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: topology_hint_rack
+            value: dc1_RACK1
+      - device: s1-host2
+        device_tags:
+          - name: topology_hint_datacenter
+            value: dc1
+          - name: topology_hint_type
+            value: endpoint
+          - name: topology_hint_pod
+            value: dc1_pod1
+          - name: topology_hint_rack
+            value: dc1_RACK2
+  tasks:
+    - name: "create tags"
+      arista.cvp.cv_tag_v3:
+        tags: "{{CVP_TAGS}}"
+        #mode: delete
+        mode: assign
+          

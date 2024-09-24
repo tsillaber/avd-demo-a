@@ -1,0 +1,238 @@
+{
+  "dashboards": [
+    {
+      "key": "881a3bc9-00c5-471c-bffa-70ab69c1049d",
+      "createdAt": [
+        258856734,
+        1561
+      ],
+      "createdBy": "ts",
+      "metaData": {
+        "schemaVersion": "3",
+        "legacyKey": "",
+        "legacyVersion": "",
+        "fromPackage": ""
+      },
+      "name": "Fabric Status (DC1)",
+      "description": "",
+      "widgets": [
+        {
+          "id": "dd32db83-f004-4db1-8f10-fd6c332d7537",
+          "name": "BGP Status",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "dimensions": {
+            "width": 11,
+            "height": 9
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "BGP_ESTABLISHED_PEER_COUNT_DEFAULT_VRF"
+            ],
+            "metricSource": "devices",
+            "selectedCustomTags": [],
+            "tags": "bgp:enabled topology_datacenter:SIT_MIG ",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "08c33163-fea9-403f-9073-2786d62c6994",
+          "name": "",
+          "position": {
+            "x": 0,
+            "y": 9
+          },
+          "dimensions": {
+            "width": 11,
+            "height": 6
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "LAG_MLAG_STATUS"
+            ],
+            "metricSource": "devices",
+            "selectedCustomTags": [],
+            "tags": "topology_type:leaf  AND  topology_datacenter:SIT_MIG ",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "6f12288c-b668-417b-9a69-f094fbbabda3",
+          "name": "",
+          "position": {
+            "x": 11,
+            "y": 0
+          },
+          "dimensions": {
+            "width": 13,
+            "height": 14
+          },
+          "type": "topology-widget",
+          "inputs": {
+            "displayMode": "logical",
+            "displayModeDefault": "logical",
+            "overlay": "inOctetsRate",
+            "selectedCustomTags": [],
+            "showActiveEvents": false,
+            "showContainerTypes": false,
+            "showLegend": true,
+            "showManagement": false,
+            "showVxlanTunnels": false,
+            "tags": "topology_datacenter:SIT_MIG ",
+            "useDeviceImages": false
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "ca27869e-0323-4a02-987c-d45a97e0b71b",
+          "name": "",
+          "position": {
+            "x": 11,
+            "y": 26
+          },
+          "dimensions": {
+            "width": 13,
+            "height": 11
+          },
+          "type": "events-widget",
+          "inputs": {
+            "eventCountThreshold": 1,
+            "eventTypeFilter": [],
+            "selectedCustomTags": [],
+            "severityFilter": [
+              "CRITICAL",
+              "ERROR",
+              "WARNING",
+              "INFO"
+            ],
+            "showAcked": false,
+            "showActiveOnly": false,
+            "tags": "topology_datacenter:SIT_MIG ",
+            "viewMode": "Events Table"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "c47ee7f8-cb87-4388-ad2e-7dff63da2d3a",
+          "name": "",
+          "position": {
+            "x": 0,
+            "y": 27
+          },
+          "dimensions": {
+            "width": 11,
+            "height": 5
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "MAC_TABLE_SIZE"
+            ],
+            "metricSource": "devices",
+            "selectedCustomTags": [],
+            "tags": "topology_type:leaf AND topology_datacenter:SIT_MIG ",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "5efabbd0-25db-4528-81d5-87b7eba74a5e",
+          "name": "",
+          "position": {
+            "x": 0,
+            "y": 32
+          },
+          "dimensions": {
+            "width": 11,
+            "height": 7
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "V4_TOTAL_ROUTES_TABLE_SIZE"
+            ],
+            "metricSource": "devices",
+            "selectedCustomTags": [],
+            "tags": "(topology_type:spine OR topology_type:leaf  ) AND topology_datacenter:SIT_MIG ",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "9fd7c8b7-92a4-4fce-93c4-8cafb497f589",
+          "name": "",
+          "position": {
+            "x": 0,
+            "y": 15
+          },
+          "dimensions": {
+            "width": 11,
+            "height": 12
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "INTERFACE_OUT_BITRATE"
+            ],
+            "metricSource": "interfaces",
+            "selectedCustomTags": [],
+            "tags": "POC:mon ",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "40cc2a38-47c5-46d7-8bf2-c25f1212401a",
+          "name": "",
+          "position": {
+            "x": 11,
+            "y": 14
+          },
+          "dimensions": {
+            "width": 13,
+            "height": 12
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "INTERFACE_IN_BITRATE"
+            ],
+            "metricSource": "interfaces",
+            "selectedCustomTags": [],
+            "tags": "POC:mon ",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        }
+      ],
+      "lastUpdated": 1724327097689,
+      "lastUpdatedBy": "ts"
+    }
+  ]
+}

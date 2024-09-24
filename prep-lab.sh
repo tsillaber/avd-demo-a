@@ -1,6 +1,6 @@
 cd /home/coder/project/labfiles
 git clone https://github.com/tsillaber/avd-demo-a.git
-cd ci-workshops-avd
+cd avd-demo-a
 git config --global user.name "Thomas Sillaber"
 git config --global user.email "ts@arista.com"
 pip3 config set global.break-system-packages true
