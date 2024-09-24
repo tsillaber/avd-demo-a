@@ -18,7 +18,7 @@ avd_data_validation_mode: error
 
 # CVP node variables
 cv_collection: v3
-execute_tasks: true
+#execute_tasks: true
 
 # Local Users
 local_users:
