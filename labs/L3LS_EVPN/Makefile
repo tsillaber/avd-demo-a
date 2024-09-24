@@ -21,7 +21,14 @@ deploy-site-1: ## Deploy Configs via eAPI
 .PHONY: cvp-site-1
 cvp-site-1: ## Deploy Configs via CVP
 	ansible-playbook playbooks/cvp1.yml -i sites/site_1/inventory.yml
+
+.PHONY: tag-site-1
+tag-site-1: ## Deploy Tags and optize views
 	ansible-playbook playbooks/tagS1.yml -i sites/site_1/inventory.yml
+
+.PHONY: val-site-1
+cvp-site-1: ## Validate Site1
+	ansible-playbook playbooks/validate.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
 
 ########################################################
 # Site 2
@@ -42,7 +49,13 @@ deploy-site-2: ## Deploy Configs via eAPI
 .PHONY: cvp-site-2
 cvp-site-2: ## Deploy Configs via CVP
 	ansible-playbook playbooks/cvp2.yml -i sites/site_2/inventory.yml
+
+.PHONY: tag-site-2
+tag-site-2: ## Deploy Tags and optize views
 	ansible-playbook playbooks/tagS2.yml -i sites/site_2/inventory.yml
+
+cvp-site-2: ## Validate Site1
+	ansible-playbook playbooks/validate.yml -i sites/site_2/inventory.yml -e "target_hosts=SITE2_FABRIC"
 
 ########################################################
 # WAN & Hosts - Lab Prep
