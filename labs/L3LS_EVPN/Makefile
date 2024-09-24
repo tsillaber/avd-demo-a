@@ -27,7 +27,7 @@ tag-site-1: ## Deploy Tags and optize views
 	ansible-playbook playbooks/tagS1.yml -i sites/site_1/inventory.yml
 
 .PHONY: val-site-1
-cvp-site-1: ## Validate Site1
+val-site-1: ## Validate Site1
 	ansible-playbook playbooks/validate.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
 
 ########################################################
@@ -54,7 +54,8 @@ cvp-site-2: ## Deploy Configs via CVP
 tag-site-2: ## Deploy Tags and optize views
 	ansible-playbook playbooks/tagS2.yml -i sites/site_2/inventory.yml
 
-cvp-site-2: ## Validate Site1
+.PHONY: val-site-2
+val-site-2: ## Validate Site1
 	ansible-playbook playbooks/validate.yml -i sites/site_2/inventory.yml -e "target_hosts=SITE2_FABRIC"
 
 ########################################################
