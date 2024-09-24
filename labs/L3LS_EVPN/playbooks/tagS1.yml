@@ -45,6 +45,8 @@
             value: leaf
           - name: topology_hint_pod
             value: dc1_pod1
+          - name: topology_hint_rack
+            value: dc1_RACK1
           - name: DC
             value: dc1
           - name: DC-Pod
@@ -63,6 +65,8 @@
             value: leaf
           - name: topology_hint_pod
             value: dc1_pod1
+          - name: topology_hint_rack
+            value: dc1_RACK1
           - name: DC
             value: dc1
           - name: DC-Pod
@@ -81,6 +85,8 @@
             value: leaf
           - name: topology_hint_pod
             value: dc1_pod1
+          - name: topology_hint_rack
+            value: dc1_RACK2
           - name: DC
             value: dc1
           - name: DC-Pod
@@ -99,6 +105,8 @@
             value: leaf
           - name: topology_hint_pod
             value: dc1_pod1
+          - name: topology_hint_rack
+            value: dc1_RACK2
           - name: DC
             value: dc1
           - name: DC-Pod
