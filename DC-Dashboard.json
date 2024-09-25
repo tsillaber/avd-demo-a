@@ -199,6 +199,32 @@
           "parent": ""
         },
         {
+          "id": "f89e7ecc-d4d8-4860-b005-b141f7deb3a3",
+          "name": "",
+          "position": {
+            "x": 11,
+            "y": 25
+          },
+          "dimensions": {
+            "width": 13,
+            "height": 6
+          },
+          "type": "metrics-widget",
+          "inputs": {
+            "components": [],
+            "isTokenSearchEnabled": true,
+            "metricKeys": [
+              "PACKET_LOSS_VRF"
+            ],
+            "metricSource": "connectivity",
+            "selectedCustomTags": [],
+            "tags": "",
+            "viewType": "metric"
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
           "id": "8f000311-95fb-40aa-97e8-b9e587593e8f",
           "name": "",
           "position": {
@@ -222,7 +248,7 @@
           "parent": ""
         }
       ],
-      "lastUpdated": 1727169014693,
+      "lastUpdated": 1727185373275,
       "lastUpdatedBy": "arista"
     }
   ]
