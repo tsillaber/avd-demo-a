@@ -3,7 +3,7 @@
     {
       "key": "881a3bc9-00c5-471c-bffa-70ab69c1049d",
       "createdAt": [
-        590203625,
+        680300379,
         1608
       ],
       "createdBy": "arista",
@@ -211,7 +211,44 @@
           },
           "type": "metrics-widget",
           "inputs": {
-            "components": [],
+            "components": [
+              {
+                "deviceId": "s1-host1",
+                "hostname": "s1-host2",
+                "vrfName": "default",
+                "interfaceName": "default"
+              },
+              {
+                "deviceId": "s1-host1",
+                "hostname": "s2-host1",
+                "vrfName": "default",
+                "interfaceName": "default"
+              },
+              {
+                "deviceId": "s1-host1",
+                "hostname": "s2-host2",
+                "vrfName": "default",
+                "interfaceName": "default"
+              },
+              {
+                "deviceId": "s2-host1",
+                "hostname": "s1-host1",
+                "vrfName": "default",
+                "interfaceName": "default"
+              },
+              {
+                "deviceId": "s2-host1",
+                "hostname": "s1-host2",
+                "vrfName": "default",
+                "interfaceName": "default"
+              },
+              {
+                "deviceId": "s2-host1",
+                "hostname": "s2-host2",
+                "vrfName": "default",
+                "interfaceName": "default"
+              }
+            ],
             "isTokenSearchEnabled": true,
             "metricKeys": [
               "PACKET_LOSS_VRF"
@@ -248,7 +285,7 @@
           "parent": ""
         }
       ],
-      "lastUpdated": 1727185373275,
+      "lastUpdated": 1727257202312,
       "lastUpdatedBy": "arista"
     }
   ]
